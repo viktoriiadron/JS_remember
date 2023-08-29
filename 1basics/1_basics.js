@@ -31,8 +31,14 @@ console.log(typeof "10"); // string
 console.log(typeof undefined); // undefined 
 console.log(typeof { value: 10 }); // object
 console.log(typeof Symbol()); // symbol
-console.log(typeof null); // object! just remember!
-console.log(typeof function() {}); // function
+console.log(typeof null); // object! just remember this mistake!
+console.log(typeof function () { }); // function
+typeof null // "object"
+typeof null // "object"
+
+//NB typeof has more value than binary operators
+//typeof 50 + " Квартир"; // Выведет "number Квартир"
+//typeof (50 + " Квартир"); // Выведет "string"
 
 //how can we name variables
 // NB uppercase/lovercase makes difference
@@ -74,7 +80,10 @@ isFinite(value) // returns true, if it is simple number, namely not NaN/Infinity
 value.toString(base) // returns string (!) value in system base (1-36);
 parseInt(value)// повертає ціле число з рядка, який починається з числа, але може мати і рядкові символи;
 parseFloat(value)// повертає числа з плаваючою точкою (дробове), яке починається з числа, але може мати і рядкові символи;
-
+console.log( Number("   123   ") ); // 123
+console.log( Number("123z") );      // NaN (ошибка чтения числа на месте символа "z")
+console.log( Number(true) );        // 1
+console.log( Number(false) );       // 0
 //--------strings-------
 // console.log('it is 'fantastic''); // SyntaxError
 console.log('it is \'fantastic\''); // it is 'fantastic'
@@ -102,6 +111,7 @@ str.toLowerCase();
 str.indexOf(substr, pos) //returns position of the first (default position = 0) or returns -1
 
 //-------boolean-------
+Boolean(value);
 console.log(1 == true); // true
 console.log(0 == false); // true
 console.log("false" == false); // false
@@ -150,14 +160,14 @@ console.log(result); // true
 // console.log(false || true || true);  // true
 // let x = 5;
 // let y = 10;
-// let z = x || y;  
+// let z = x || y;
 // console.log(z); // 5
 
 // // operator AND &&
 // console.log(false && true && true);  // false
 // let x = 5;
 // let y = 10;
-// let z = x && y;  
+// let z = x && y;
 // console.log(z); // 10
 
 // // operaton NOT !
@@ -166,3 +176,5 @@ console.log(result); // true
 // console.log(false || true && !false); // true, cos && higher than ||, the most valuable is NOT !
 
 // ?? returns first value is it is not null/undefined, otherwise second
+
+
